@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Test-Follow-2-Papa.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Papa" type="Sprite" parent="."]
+
+transform/pos = Vector2( 473.907, 236.953 )
+texture = ExtResource( 1 )
+script/script = ExtResource( 2 )
+
+[node name="Enfant" type="Sprite" parent="."]
+
+transform/pos = Vector2( 474.478, 248.575 )
+transform/scale = Vector2( 0.634191, 0.634191 )
+texture = ExtResource( 1 )
+
+

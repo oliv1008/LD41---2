@@ -1,0 +1,257 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://scenes/Collectibles_Letter.gd" type="Script" id=1]
+[ext_resource path="res://assets/Cave-Story.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 44.618, 44.778 )
+
+[sub_resource type="DynamicFont" id=2]
+
+font/size = 64
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 2 )
+
+[node name="JUMP" type="Node2D"]
+
+transform/pos = Vector2( 30, 0 )
+
+[node name="Lettre J" type="Node2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( -120, 0 )
+script/script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="Lettre J"]
+
+editor/display_folded = true
+transform/scale = Vector2( 0.567774, 0.557599 )
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lettre J/Area2D"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Label" type="Label" parent="Lettre J"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -18.0
+margin/top = -18.0
+margin/right = 22.0
+margin/bottom = 22.0
+custom_fonts/font = SubResource( 2 )
+text = "J"
+align = 1
+valign = 1
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Timer" type="Timer" parent="Lettre J"]
+
+process_mode = 1
+wait_time = 0.1
+one_shot = false
+autostart = false
+
+[node name="Lettre P" type="Node2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 60, 0 )
+script/script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="Lettre P"]
+
+editor/display_folded = true
+transform/scale = Vector2( 0.567774, 0.557599 )
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lettre P/Area2D"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Label" type="Label" parent="Lettre P"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -18.0
+margin/top = -18.0
+margin/right = 22.0
+margin/bottom = 22.0
+custom_fonts/font = SubResource( 2 )
+text = "P"
+align = 1
+valign = 1
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Timer" type="Timer" parent="Lettre P"]
+
+process_mode = 1
+wait_time = 0.1
+one_shot = false
+autostart = false
+
+[node name="Lettre M" type="Node2D" parent="."]
+
+editor/display_folded = true
+script/script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="Lettre M"]
+
+editor/display_folded = true
+transform/scale = Vector2( 0.567774, 0.557599 )
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lettre M/Area2D"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Label" type="Label" parent="Lettre M"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -18.0
+margin/top = -18.0
+margin/right = 22.0
+margin/bottom = 22.0
+custom_fonts/font = SubResource( 2 )
+text = "M"
+align = 1
+valign = 1
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Timer" type="Timer" parent="Lettre M"]
+
+process_mode = 1
+wait_time = 0.1
+one_shot = false
+autostart = false
+
+[node name="Lettre U" type="Node2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( -60, 0 )
+script/script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="Lettre U"]
+
+editor/display_folded = true
+transform/scale = Vector2( 0.567774, 0.557599 )
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lettre U/Area2D"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Label" type="Label" parent="Lettre U"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -18.0
+margin/top = -18.0
+margin/right = 22.0
+margin/bottom = 22.0
+custom_fonts/font = SubResource( 2 )
+text = "U"
+align = 1
+valign = 1
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Timer" type="Timer" parent="Lettre U"]
+
+process_mode = 1
+wait_time = 0.1
+one_shot = false
+autostart = false
+
+[connection signal="timeout" from="Lettre J/Timer" to="Lettre J" method="_on_Timer_timeout"]
+
+[connection signal="timeout" from="Lettre P/Timer" to="Lettre P" method="_on_Timer_timeout"]
+
+[connection signal="timeout" from="Lettre M/Timer" to="Lettre M" method="_on_Timer_timeout"]
+
+[connection signal="timeout" from="Lettre U/Timer" to="Lettre U" method="_on_Timer_timeout"]
+
+

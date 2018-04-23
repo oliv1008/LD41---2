@@ -1,0 +1,200 @@
+[gd_scene load_steps=19 format=1]
+
+[ext_resource path="res://scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://assets/Cave-Story.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/accepted.smp" type="Sample" id=3]
+[ext_resource path="res://assets/clavier_1.smp" type="Sample" id=4]
+[ext_resource path="res://assets/clavier_2.smp" type="Sample" id=5]
+[ext_resource path="res://assets/clavier_3.smp" type="Sample" id=6]
+[ext_resource path="res://assets/clavier_4.smp" type="Sample" id=7]
+[ext_resource path="res://assets/clavier_5.smp" type="Sample" id=8]
+[ext_resource path="res://assets/clavier_6.smp" type="Sample" id=9]
+[ext_resource path="res://assets/clavier_7.smp" type="Sample" id=10]
+[ext_resource path="res://assets/clavier_8.smp" type="Sample" id=11]
+[ext_resource path="res://assets/coin.smp" type="Sample" id=12]
+[ext_resource path="res://assets/dash.smp" type="Sample" id=13]
+[ext_resource path="res://assets/jump.smp" type="Sample" id=14]
+[ext_resource path="res://assets/rejected.smp" type="Sample" id=15]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 14.4051, 14.0218 )
+
+[sub_resource type="DynamicFont" id=2]
+
+font/size = 128
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 2 )
+
+[sub_resource type="SampleLibrary" id=3]
+
+samples/accepted = {
+"db": -20.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 3 )
+}
+samples/clavier_1 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 4 )
+}
+samples/clavier_2 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 5 )
+}
+samples/clavier_3 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 6 )
+}
+samples/clavier_4 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 7 )
+}
+samples/clavier_5 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 8 )
+}
+samples/clavier_6 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 9 )
+}
+samples/clavier_7 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 10 )
+}
+samples/clavier_8 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 11 )
+}
+samples/coin = {
+"db": -20.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 12 )
+}
+samples/dash = {
+"db": -20.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 13 )
+}
+samples/jump = {
+"db": -20.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 14 )
+}
+samples/rejected = {
+"db": -10.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 15 )
+}
+
+[node name="Player" type="Node2D"]
+
+[node name="Childs" type="Node2D" parent="."]
+
+[node name="Player" type="KinematicBody2D" parent="."]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 2.36668 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+MAX_SPEED = 700
+ACCELERATION = 2600
+DECELERATION = 5000
+WALL_JUMP_FORCE_HORIZONTALE = 1000
+WALL_JUMP_FORCE_VERTICALE = 1000
+DASH_FORCE_HORIZONTALE = 3000
+JUMP_FORCE = 800
+GRAVITY = 2800
+MAX_FALL_SPEED = 1400
+MAX_JUMP_COUNT = 1
+MAX_DASH_COUNT = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+
+transform/pos = Vector2( 0, 2.36668 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = false
+smoothing/speed = 5.0
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+
+[node name="Label" type="Label" parent="Player"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -8.0
+margin/top = -53.0
+margin/right = 32.0
+margin/bottom = 27.0
+custom_fonts/font = SubResource( 2 )
+text = "."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="DashTimer" type="Timer" parent="Player"]
+
+process_mode = 1
+wait_time = 0.15
+one_shot = true
+autostart = false
+
+[node name="SamplePlayer2D" type="SamplePlayer2D" parent="Player"]
+
+params/volume_db = -20.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 1
+config/samples = SubResource( 3 )
+config/pitch_random = 0.08
+
+[connection signal="timeout" from="Player/DashTimer" to="Player" method="_on_DashTimer_timeout"]
+
+
